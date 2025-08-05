@@ -38,4 +38,13 @@ arr1[0]=10;
 console.log(arr1,arr2);//as we can see the value of arr2 also changes
 //output [ 10, 2, 3 ] [ 10, 2, 3 ]
 
+//Searching for a value
+var names = ["David", "Cynthia", "Raymond", "Clayton", "Jennifer"];
+var p = names.indexOf('David');
+console.log(p); //0
+var p = names.indexOf('Raymond');
+console.log(p); //2
+var p = names.indexOf('John');
+console.log(p);//-1 because John is not present
+
 
