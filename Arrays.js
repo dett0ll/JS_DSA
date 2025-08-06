@@ -163,4 +163,66 @@ if (a){
   console.log('no number is even');//this will be output
 }
 
+//reduce function with add function add element of Array from left to right
 
+function add(tv, cv){
+  return tv+cv;
+}
+var num =[1,2,3,4,5];
+console.log(num.reduce(add));//15
+
+//reduce with add can also be used to concat stirngs
+
+function add(tv, cv){
+  return tv+cv;
+}
+var l = ['this', 'is', 'line'];
+console.log(l.reduce(add));//thisisline
+
+//reduceRight works from right to left
+function add(tv, cv){
+  return tv+cv;
+}
+var r = ['this', 'is', 'line'];
+console.log(r.reduceRight(add));//lineisthis
+
+//map() return new array
+
+function add(num){
+  return num +=5;
+}
+
+var num =[10,20,30];
+console.log(num.map(add));//[ 15, 25, 35 ]
+
+//map() on strings
+
+function firstLetter(words){
+  return words[0];
+}
+
+var words = ["for","your","information"];
+console.log(words.map(firstLetter));//[ 'f', 'y', 'i' ]
+
+//every() only return true if all numbers are even, filter reurn the new array with elements that are even
+function even(num){
+  return num%2 ==0;
+}
+var num =[1,2,3,4];
+var c = num.filter(even);
+console.log(c);//[ 2, 4 ]
+
+//same for odd
+function odd(num){
+  return num%2 !=0;
+}
+var num2 =[1,2,3,4];
+var o= num2.filter(odd);
+console.log(o);//[ 1, 3 ]
+
+function passingGrades(grades){
+  return grades>60;
+}
+var grades = [39,43,89,19,46,54,48,5,13,31,27,95,62,64];
+var c = grades.filter(passingGrades);
+console.log(c);//[ 89, 95, 62, 64 ]
