@@ -113,3 +113,54 @@ let arr2 = ['apple','cat','bike'];
 arr2.sort();
 console.log(arr2);//[ 'apple', 'bike', 'cat' ]
 
+//sort for numbers use the compare function
+function compare(num1,num2){
+  return num1-num2
+}
+var num =[3,10,1,2,4];
+console.log(num.sort(compare));
+//Iterator Functions
+//The final set of array functions we examine are iteratorfunctions. These functions apply
+//a function to each element of an array, either returning a value, a set of values, or a new
+//array after applying the function to each element of an array.
+//forEach
+//forEach does not collect return value. map() does
+function square(num){
+  console.log(num*num);
+}
+var num =[1,2,3,4];
+num.forEach(square);
+
+function square(num){
+  return num*num;
+}
+var num =[1,2,3,4];
+console.log(num.map(square));
+
+//every()
+//return true if all numbers are even in this case
+function even(n){
+  return n%2 == 0;
+}
+var num =[1,2,3,4];
+var a = num.every(even);
+if (a){
+  console.log('all numbers are even');
+}else{
+  console.log('all numbers are not even');//this will be output
+}
+
+//some()
+//return true if one of the numbers is even
+function even(n){
+  return n%2 == 0;
+}
+var num =[1,3,5,7];
+var a = num.some(even);
+if (a){
+  console.log('some numbers are even');
+}else{
+  console.log('no number is even');//this will be output
+}
+
+
