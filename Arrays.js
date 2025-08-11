@@ -262,6 +262,27 @@ for (let i=0; i<rowl; i++){
   console.log(s/3);//81.33333333333333,79.66666666666667,91.33333333333333
   s =0;
 }
+//rowwise and column wise
+var grades = [[10, 20],[30, 40],[50, 60]];
+let rowl = grades.length;//3
+let coll = grades[rowl-1].length;//2
+//console.log(rowl,coll);//3,2
+let cs =0;
 
+for (let i=0; i<rowl; i++){
+  for (let j=0;j<coll;j++){
+    cs += grades[i][j];
+  }
+  console.log(cs);
+  cs=0;
+}
+let rs=0;
+for (let k=0; k<coll; k++){
+  for (let l=0; l<rowl ;l++){
+    rs += grades[l][k]; 
+  }
+  console.log(rs);
+  rs =0;
+}
 
 
