@@ -226,3 +226,42 @@ function passingGrades(grades){
 var grades = [39,43,89,19,46,54,48,5,13,31,27,95,62,64];
 var c = grades.filter(passingGrades);
 console.log(c);//[ 89, 95, 62, 64 ]
+
+//Create a 2d array
+Array.matrix = function (nr,nc,iv){
+  let arr = [];
+  for (let i=0;i<=nr;i++){
+    let col = [];
+    for (let j=0; j<=nc; j++){
+      col[j]=iv;
+    }
+    arr[i]=col;
+  }
+  return arr;
+}
+
+let firstArray = Array.matrix(2,2,0);
+console.log(firstArray);
+console.log(firstArray[0][1]); //output 0
+firstArray[0][1] = 3;
+console.log(firstArray[0][1]); //output 3
+let secondArray = Array.matrix(2,2,''); //string
+secondArray[0][2] = 'John'
+console.log(secondArray[0][2]);//output John
+
+//average grades column wise c1+c2+c3
+
+var grades = [[89, 77, 78],[76, 82, 81],[91, 94, 89]];
+let rowl = grades.length;//3
+let coll = grades[rowl-1].length;//3
+let s=0;
+for (let i=0; i<rowl; i++){
+  for (let j=0; j<coll; j++){
+    s += grades[i][j];
+  }
+  console.log(s/3);//81.33333333333333,79.66666666666667,91.33333333333333
+  s =0;
+}
+
+
+
