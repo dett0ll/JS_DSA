@@ -285,4 +285,21 @@ for (let k=0; k<coll; k++){
   rs =0;
 }
 
+//jaggered array
+var grades = [[89, 77],[76, 82, 81],[91, 94, 89, 99]];
+console.log(grades);
+let ave = 0;
+let rl= grades.length;
+console.log(rl);
+let cl = grades[rl-1].length; //check the length of columns in  last row
+console.log(cl);
+let s = 0;
+for (let i=0;i<rl;i++){
+  for (let j=0;j<grades[i].length;j++){
+    s += grades[i][j];
+  }
+  console.log(s/grades[i].length);
+  s=0;
+}
+
 
