@@ -326,4 +326,80 @@ studentMarks.add(50);
 studentMarks.add(50);
 console.log(studentMarks.average());
 
+//Store a set of words in an array and display the contents both forward and backward
+let a =['this','is','test'];
+console.log(a); //[ 'this', 'is', 'test' ]
+console.log(a.reverse());//[ 'test', 'is', 'this' ]
+
+//Create an object that stores individual letters in an array and has a function for
+//displaying the letters as a single word.
+
+function add(a,b){
+  return a+b;
+}
+
+let a = ['t','h','i','s'];
+console.log(a.reduce(add));//this
+
+//final project
+let ws =0;
+let ms =0;
+function weekTemps() {
+ this.dataStore = [];
+ this.add = add;
+ this.average = average;
+ this.week= week;
+ this.month= month;
+}
+function add(temp) {
+ this.dataStore.push(temp);
+}
+function average() {
+}
+function week(){
+  let a = this.dataStore.length;
+  //return a;
+  let waverage = []
+  for (let i=0;i<a;i++){
+    for (let j=0; j<this.dataStore[i].length;j++){
+      ws +=this.dataStore[i][j];
+    }
+    //return ms;
+    waverage[i]=ms;
+    ws=0;
+  }
+  return waverage;
+}
+function month(){
+  let a = this.dataStore.length;
+  //return a;
+  let maverage = []
+  for (let i=0;i<this.dataStore[i].length;i++){
+    for (let j=0; j<a;j++){
+      ms +=this.dataStore[j][i];
+    }
+    //return ms;
+    maverage[i]=ms;
+    ms=0;
+  }
+  return maverage;
+}
+var thisWeek = new weekTemps();
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+thisWeek.add([1,2,3,4,5,6,7]);
+
+//console.log(thisWeek.average());
+//console.log(thisWeek.dataStore);
+console.log(thisWeek.week());
+console.log(thisWeek.month());
 
