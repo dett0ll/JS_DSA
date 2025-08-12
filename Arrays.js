@@ -302,4 +302,28 @@ for (let i=0;i<rl;i++){
   s=0;
 }
 
+//objects and arrays
+function grades(){
+  this.datastore = [];
+  this.add = add;
+  this.average= average;
+}
+function add(marks){
+  this.datastore.push(marks);
+  console.log(this.datastore);
+}
+function average(){
+  for (let i=0; i<this.datastore.length; i++){
+    a += this.datastore[i];
+  }
+  return a/this.datastore.length;
+}
+let a =0;
+let studentMarks = new grades();
+studentMarks.add(50);
+studentMarks.add(50);
+studentMarks.add(50);
+studentMarks.add(50);
+console.log(studentMarks.average());
+
 
