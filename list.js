@@ -61,6 +61,16 @@ firstList.dataStore.push('john','cena','is','the','goat');
 console.log(firstList.dataStore);
 console.log(firstList.dataStore.toString());//john,cena,is,the,goat
 
+//remove
+console.log(firstList.dataStore.splice(0,1));//['john']
+console.log(firstList.dataStore);//[ 'cena', 'is', 'the', 'goat' ]
+
+//insert
+console.log(firstList.dataStore.splice(0,0,'john'));//add john at 0 posiiton don't remve any element
+console.log(firstList.dataStore);
+
+
+
 
 
 
