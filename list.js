@@ -69,7 +69,11 @@ console.log(firstList.dataStore);//[ 'cena', 'is', 'the', 'goat' ]
 console.log(firstList.dataStore.splice(0,0,'john'));//add john at 0 posiiton don't remve any element
 console.log(firstList.dataStore);
 
-
+//clear 
+let a = firstList.dataStore;
+console.log(a);
+a.length = 0; //clears all elements in list
+console.log(a); //[] empty array
 
 
 
