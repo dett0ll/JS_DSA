@@ -37,3 +37,19 @@ console.log(firstList.dataStore)
 console.log(firstList.dataStore.splice(2,1));//it will remove at position 2 and only that element
 console.log(firstList.dataStore)
 
+//find
+function List(){
+  this.dataStore = []
+}
+
+let firstList = new List();
+firstList.dataStore.push('a','b','c','d');
+console.log(firstList.dataStore);
+console.log(firstList.dataStore.find(element => element =='a'));//returns a because a is present
+console.log(firstList.dataStore.find(element => element =='z'));// returns undefined because z in not present
+
+//length
+console.log(firstList.dataStore.length);//4
+
+
+
