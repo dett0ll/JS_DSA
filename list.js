@@ -51,5 +51,16 @@ console.log(firstList.dataStore.find(element => element =='z'));// returns undef
 //length
 console.log(firstList.dataStore.length);//4
 
+//list to string
+function List(){
+  this.dataStore = []
+}
+
+let firstList = new List();
+firstList.dataStore.push('john','cena','is','the','goat');
+console.log(firstList.dataStore);
+console.log(firstList.dataStore.toString());//john,cena,is,the,goat
+
+
 
 
