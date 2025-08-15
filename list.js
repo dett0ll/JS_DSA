@@ -60,6 +60,17 @@ console.log(a);
 a.length = 0; //clears all elements in list
 console.log(a); //[] empty array
 
+//getelement of list
+function List(){
+  this.dataStore = [];
+ 
+}
 
+
+let firstlist = new List();
+firstlist.dataStore.push('a','b','c','d','e');
+console.log(firstlist.dataStore);
+console.log(firstlist.dataStore[0]); //a
+console.log(firstlist.dataStore[1]); //b
 
 
