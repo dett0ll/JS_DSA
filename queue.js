@@ -67,3 +67,76 @@ if (!femaleDancers.empty()){
 }if (!maleDancers.empty()){
     console.log(`${maleDancers.front().name} is next in line`)
 }
+
+
+//radix sort
+function Queue(){
+    this.dataStore = [];
+    this.enqueue = enqueue;
+    this.dequeue = dequeue;
+    this.empty = empty;
+    this.front = front;
+}
+function enqueue(element){
+    this.dataStore.push(element);
+}
+function dequeue(){
+   return this.dataStore.shift();
+}
+function empty(){
+    if (this.dataStore.length === 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+function front(){
+    return this.dataStore[0];
+}
+function distribute(nums, queues, n, digit) {
+    for (let i=0; i<n; i++){
+        if (digit == 1) {
+            queues[nums[i]%10].enqueue(nums[i]);
+        }else{
+            queues[Math.floor(nums[i] / 10)].enqueue(nums[i]);
+        }       
+    }
+}
+function collect(queues, nums) {
+    var i = 0;
+    for (var digit = 0; digit < 10; ++digit) {
+        while (!queues[digit].empty()) {
+            nums[i++] = queues[digit].dequeue();
+        }
+    }console.log(nums);
+}
+
+var queues =[];
+for (let i=0; i<10; i++){
+    queues[i]=new Queue;
+}
+var nums =[];
+for (let i=0; i<10; i++){
+    nums[i]= Math.floor(Math.random()*100);
+}
+console.log(nums);
+distribute(nums, queues, 10, 1);
+for (let i = 0; i < queues.length; i++) {
+  console.log(`Queue[${i}]:`, queues[i].dataStore);
+}
+collect(queues, nums);
+for (let i = 0; i < queues.length; i++) {
+  console.log(`Queue[${i}]:`, queues[i].dataStore);
+}
+distribute(nums, queues, 10, 10);
+for (let i = 0; i < queues.length; i++) {
+  console.log(`Queue[${i}]:`, queues[i].dataStore);
+}
+collect(queues, nums);
+for (let i = 0; i < queues.length; i++) {
+  console.log(`Queue[${i}]:`, queues[i].dataStore);
+}
+console.log(nums);
+
+
+
